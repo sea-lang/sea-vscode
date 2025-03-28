@@ -1,0 +1,25 @@
+{
+  "name": "sea-vscode",
+  "displayName": "sea-vscode",
+  "description": "Language support for Sea",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "sea",
+      "aliases": ["Sea", "sea"],
+      "extensions": [".sea"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "sea",
+      "scopeName": "source.sea",
+      "path": "./syntaxes/sea.tmLanguage.json"
+    }]
+  }
+}

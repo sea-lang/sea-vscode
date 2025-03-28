@@ -1,0 +1,23 @@
+use std
+
+rec User(name: String, age: int)
+
+fun greet(user: User) -> printf(c"Hello, %.*s!\n", user.name.len, user.name.str)
+
+raw[
+#include <stdio.h>
+int main() {
+	puts("bozo!");
+}
+]
+
+fun main(): int {
+	let users: User[] = [
+		new User("Frodo", 50),
+		new User("Gandalf", 50000),
+	]
+
+	each user of users -> greet(user)
+
+	ret 0
+}

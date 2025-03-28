@@ -1,0 +1,91 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Sea",
+	"patterns": [
+		{ "include": "#keywords" },
+		{ "include": "#constants" },
+		{ "include": "#strings" },
+		{ "include": "#raw" },
+		{ "include": "#comments" }
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.operator.new.sea",
+					"match": "\\bnew\\b"
+				},
+				{
+					"name": "storage.type.sea",
+					"match": "\\b(var|let|def)\\b"
+				},
+				{
+					"name": "storage.type.function.sea",
+					"match": "\\bfun\\b"
+				},
+				{
+					"name": "storage.type.rec.sea",
+					"match": "\\brec\\b"
+				},
+				{
+					"name": "keyword.control.sea",
+					"match": "\\b(use|in|of|to|as|raw|if|while|for|each|ret)\\b"
+				},
+				{
+					"name": "keyword.function.sea",
+					"match": "\\bfun\\b"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.sea",
+					"match": "-?\\d+(.\\d+)?"
+				},
+				{
+					"name": "constant.other.boolean.sea",
+					"match": "\\b(true|false)\\n"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.sea",
+					"begin": "c?\"",
+					"end": "\""
+				},
+				{
+					"name": "string.quoted.single.sea",
+					"begin": "'",
+					"end": "'"
+				},
+				{
+					"name": "constant.character.escape.sea",
+					"match": "\\\\."
+				}
+			]
+		},
+		"raw": {
+			"name": "meta.embedded.block.c.sea",
+			"begin": "raw\\[",
+			"end": "\\]",
+			"patterns": [{ "include": "source.c" }]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.sea",
+					"match": "//.*"
+				},
+				{
+					"name": "comment.block.sea",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
+		}
+	},
+	"scopeName": "source.sea"
+}
