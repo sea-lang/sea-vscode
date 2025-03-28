@@ -2,6 +2,13 @@
   "name": "sea-vscode",
   "displayName": "sea-vscode",
   "description": "Language support for Sea",
+  "repository": {
+    "url": "https://github.com/emmathemartian/sea-vscode"
+  },
+  "author": {
+    "name": "EmmaTheMartian",
+    "url": "https://emmathemartian.github.io/"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.98.0"
