@@ -1,32 +1,41 @@
 {
-  "name": "sea-vscode",
-  "displayName": "sea-vscode",
-  "description": "Language support for Sea",
-  "repository": {
-    "url": "https://github.com/emmathemartian/sea-vscode"
-  },
-  "author": {
-    "name": "EmmaTheMartian",
-    "url": "https://emmathemartian.github.io/"
-  },
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.98.0"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "contributes": {
-    "languages": [{
-      "id": "sea",
-      "aliases": ["Sea", "sea"],
-      "extensions": [".sea"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "sea",
-      "scopeName": "source.sea",
-      "path": "./syntaxes/sea.tmLanguage.json"
-    }]
-  }
+	"name": "sea-vscode",
+	"displayName": "sea-vscode",
+	"description": "Language support for Sea",
+	"repository": {
+		"url": "https://github.com/emmathemartian/sea-vscode"
+	},
+	"author": {
+		"name": "EmmaTheMartian",
+		"url": "https://emmathemartian.github.io/"
+	},
+	"version": "0.0.2",
+	"engines": {
+		"vscode": "^1.98.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "sea",
+				"aliases": [
+					"Sea",
+					"sea"
+				],
+				"extensions": [
+					".sea"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "sea",
+				"scopeName": "source.sea",
+				"path": "./syntaxes/sea.tmLanguage.json"
+			}
+		]
+	}
 }

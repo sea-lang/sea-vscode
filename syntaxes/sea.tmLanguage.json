@@ -2,11 +2,13 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Sea",
 	"patterns": [
-		{ "include": "#keywords" },
+		{ "include": "#raw" },
 		{ "include": "#constants" },
 		{ "include": "#strings" },
-		{ "include": "#raw" },
-		{ "include": "#comments" }
+		{ "include": "#keywords" },
+		{ "include": "#types" },
+		{ "include": "#comments" },
+		{ "include": "#hashtags" }
 	],
 	"repository": {
 		"keywords": {
@@ -28,12 +30,16 @@
 					"match": "\\brec\\b"
 				},
 				{
-					"name": "keyword.control.sea",
-					"match": "\\b(use|in|of|to|as|raw|if|while|for|each|ret)\\b"
+					"name": "storage.type.tag.sea",
+					"match": "\\btag\\b"
 				},
 				{
-					"name": "keyword.function.sea",
-					"match": "\\bfun\\b"
+					"name": "storage.type.tem.sea",
+					"match": "\\btem\\b"
+				},
+				{
+					"name": "keyword.control.sea",
+					"match": "\\b(use|gen|raw|ret|if|else|for|break|continue|each|of|ref|as|to|in|switch|case|fall|not|and|or)\\b"
 				}
 			]
 		},
@@ -41,26 +47,35 @@
 			"patterns": [
 				{
 					"name": "constant.numeric.sea",
-					"match": "-?\\d+(.\\d+)?"
+					"match": "\\b\\-?[0-9_]+([fdlu]|(.[0-9_]+[fd]))?\\b"
+				},
+				{
+					"name": "constant.numeric.hex.sea",
+					"match": "\\b0x[0-9a-f_]+\\b"
+				},
+				{
+					"name": "constant.numeric.binary.sea",
+					"match": "\\b0b[01_]+\\b"
 				},
 				{
 					"name": "constant.other.boolean.sea",
-					"match": "\\b(true|false)\\n"
+					"match": "\\b(true|false|nil)\\b"
+				},
+				{
+					"name": "constant.character.escape.sea",
+					"match": "\\\\."
+				},
+				{
+					"name": "constant.character.sea",
+					"match": "`[^`]*`"
 				}
 			]
 		},
 		"strings": {
+			"name": "string.quoted.double.sea",
+			"begin": "c?\"",
+			"end": "\"",
 			"patterns": [
-				{
-					"name": "string.quoted.double.sea",
-					"begin": "c?\"",
-					"end": "\""
-				},
-				{
-					"name": "string.quoted.single.sea",
-					"begin": "'",
-					"end": "'"
-				},
 				{
 					"name": "constant.character.escape.sea",
 					"match": "\\\\."
@@ -76,6 +91,15 @@
 		"comments": {
 			"patterns": [
 				{
+					"name": "comment.line.documentation.sea",
+					"match": "///.*"
+				},
+				{
+					"name": "comment.block.documentation.sea",
+					"begin": "/\\*\\*",
+					"end": "\\*\\*/"
+				},
+				{
 					"name": "comment.line.double-slash.sea",
 					"match": "//.*"
 				},
@@ -85,6 +109,22 @@
 					"end": "\\*/"
 				}
 			]
+		},
+		"hashtags": {
+			"patterns": [
+				{
+					"name": "keyword.control.hashtag.sea",
+					"match": "#[a-zA-Z0-9_$]+"
+				},
+				{
+					"name": "keyword.control.hashtag.list.sea",
+					"match": "#\\([a-zA-Z0-9_$]+(,\\s*[a-zA-Z0-9_$]+)\\)*"
+				}
+			]
+		},
+		"types": {
+			"name": "storage.type.built-in.primitive.sea",
+			"match": "\\b(void|char|bool|int|i8|i16|i32|i64|u8|u16|u32|u64|float|f32|double|f64)\\b"
 		}
 	},
 	"scopeName": "source.sea"
