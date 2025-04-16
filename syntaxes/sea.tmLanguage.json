@@ -34,12 +34,12 @@
 					"match": "\\btag\\b"
 				},
 				{
-					"name": "storage.type.tem.sea",
-					"match": "\\btem\\b"
+					"name": "keyword.other.macro.sea",
+					"match": "\\bmac\\b"
 				},
 				{
 					"name": "keyword.control.sea",
-					"match": "\\b(use|gen|raw|ret|if|else|for|break|continue|each|of|ref|as|to|in|switch|case|fall|not|and|or)\\b"
+					"match": "\\b(use|raw|ret|if|else|for|break|continue|each|of|ref|as|to|in|switch|case|fall|not|and|or)\\b"
 				}
 			]
 		},
