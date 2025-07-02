@@ -1,8 +1,10 @@
 use std
 
-rec User(name: String, age: int)
+pkg user {
+	rec User(name: String, age: int)
 
-fun greet(user: User) -> printf(c"Hello, %.*s!\n", user.name.len, user.name.str)
+	fun greet(user: user'User) -> printf(c"Hello, %.*s!\n", user.name.len, user.name.str)
+}
 
 raw[
 #include <stdio.h>
@@ -12,12 +14,12 @@ int main() {
 ]
 
 fun main(): int {
-	let users: User[] = [
-		new User("Frodo", 50),
-		new User("Gandalf", 50000),
+	let users: user'User[] = [
+		new user'User("Frodo", 50),
+		new user'User("Gandalf", 50000),
 	]
 
-	each user of users -> greet(user)
+	for i in 0 to 2 -> user'greet(users[i])
 
 	ret 0
 }

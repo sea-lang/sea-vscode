@@ -18,8 +18,16 @@
 					"match": "\\bnew\\b"
 				},
 				{
+					"name": "keyword.operator.namespace.sea",
+					"match": "\\b'\\b"
+				},
+				{
 					"name": "storage.type.sea",
 					"match": "\\b(var|let|def)\\b"
+				},
+				{
+					"name": "storage.type.pkg.sea",
+					"match": "\\bpkg\\b"
 				},
 				{
 					"name": "storage.type.function.sea",
@@ -123,8 +131,16 @@
 			]
 		},
 		"types": {
-			"name": "storage.type.built-in.primitive.sea",
-			"match": "\\b(void|char|bool|int|i8|i16|i32|i64|u8|u16|u32|u64|float|f32|double|f64)\\b"
+			"patterns": [
+				{
+					"name": "storage.type.built-in.primitive.sea",
+					"match": "\\b(void|char|bool|int|i8|i16|i32|i64|u8|u16|u32|u64|float|f32|double|f64|usize)\\b"
+				},
+				{
+					"name": "storage.type.built-in.sea",
+					"match": "\\b(String|Any)\\b"
+				}
+			]
 		}
 	},
 	"scopeName": "source.sea"
