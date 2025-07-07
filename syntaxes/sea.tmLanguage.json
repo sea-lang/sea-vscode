@@ -47,7 +47,7 @@
 				},
 				{
 					"name": "keyword.control.sea",
-					"match": "\\b(use|raw|ret|if|else|for|break|continue|each|of|ref|as|to|in|switch|case|fall|not|and|or)\\b"
+					"match": "\\b(use|raw|ret|if|else|for|break|continue|of|defer|ref|as|to|in|switch|case|fall|not|and|or)\\b"
 				}
 			]
 		},
